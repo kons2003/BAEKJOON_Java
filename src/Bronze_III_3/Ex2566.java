@@ -22,7 +22,8 @@ public class Ex2566 {
             for (int col = 1; col <= 9; col++) { // 열
                 num = Integer.parseInt(st.nextToken());
 
-                if (num > maxNum) {
+                // 최댓값, 최댓값의 행, 열 저장
+                if (num > maxNum) { 
                     maxNum = num;
                     maxLow = row;
                     maxCol = col;
