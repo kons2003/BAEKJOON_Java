@@ -33,6 +33,7 @@ public class Ex1920 {
         System.out.print(sb);
     }
 
+    // 시간초과
     /*public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
