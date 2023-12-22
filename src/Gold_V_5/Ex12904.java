@@ -1,5 +1,5 @@
 // A와 B
-package Gold_I_1;
+package Gold_V_5;
 
 import java.io.BufferedReader;
 import java.io.IOException;
