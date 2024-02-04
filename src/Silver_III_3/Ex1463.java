@@ -9,65 +9,16 @@ public class Ex1463 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         
-        int x = Integer.parseInt(br.readLine());
+        int n = Integer.parseInt(br.readLine());
 
-        twoFirst(x);
-        threeFirst(x);
-
-        System.out.println(Math.min(twoCount, threeCount));
+        System.out.println(recur(n, 0));
     }
 
-    static int twoCount = 0;
-    static int threeCount = 0;
+    static int recur(int n, int count) {
 
-    static void twoFirst(int x) {
-
-        while (x > 1) {
-            if (x % 2 == 0) {
-                x /= 2;
-                twoCount++;
-            } else {
-                x -= 1;
-                twoCount++;
-            }
+        if (n < 2) {
+            return count;
         }
-        while (x > 1) {
-            if (x % 3 == 0) {
-                x /= 3;
-                twoCount++;
-            } else if (x % 2 == 0) {
-                x /= 2;
-                twoCount++;
-            } else {
-                x -= 1;
-                twoCount++;
-            }
-        }
-    }
-
-    static void threeFirst(int x) {
-
-        while (x > 1) {
-            if (x % 3 == 0) {
-                x /= 3;
-                threeCount++;
-                break;
-            } else {
-                x -= 1;
-                threeCount++;
-            }
-        }
-        while (x > 1) {
-            if (x % 3 == 0) {
-                x /= 3;
-                threeCount++;
-            } else if (x % 2 == 0) {
-                x /= 2;
-                threeCount++;
-            } else {
-                x -= 1;
-                threeCount++;
-            }
-        }
+        return Math.min(recur(n / 2, count + 1 + (n % 2)), recur(n / 3, count + 1 + (n % 3)));
     }
 }
