@@ -14,13 +14,15 @@ public class Ex18414 {
         int l = Integer.parseInt(st.nextToken());
         int r = Integer.parseInt(st.nextToken());
 
+        int result = 0;
         int min = 100001;
         for (int i = l; i <= r; i++) {
-            if (Math.abs(x - min) > Math.abs(x - i)) {
-                min = i;
+            if (min > Math.abs(x - i)) {
+                min = Math.abs(x - i);
+                result = i;
             }
         }
 
-        System.out.println(min);
+        System.out.println(result);
     }
 }
