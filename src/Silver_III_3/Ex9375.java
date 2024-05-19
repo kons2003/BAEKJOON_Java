@@ -28,13 +28,13 @@ public class Ex9375 {
                 map.put(type, map.get(type) + 1);
             }
 
-            int result = 1;
+            int result = 1; // 며칠동안 밖에 돌아다닐 수 있는지 저장
 
             for (int val : map.values()) {
-                result *= (val + 1);
+                result *= (val + 1); // 종류별 안 입는 경우까지 계산
             }
 
-            System.out.println(result - 1);
+            System.out.println(result - 1); // 옷을 안 입는 경우 -1
         }
     }
 }
