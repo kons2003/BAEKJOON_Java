@@ -25,9 +25,9 @@ public class Ex2621 {
 
             colorList[i] = color;
             numList[i] = num;
-            
+
             // 같은 색, 숫자 카운트 코드
-            if (i >= 1 && colorList[i - 1].equals(colorList[i])) { 
+            if (i >= 1 && colorList[i - 1].equals(colorList[i])) {
                 colorCount++;
             }
             numCount[num]++;
@@ -36,13 +36,13 @@ public class Ex2621 {
 
         // 연속적인 숫자 카운트 코드
         int continuedNumCount = 1; // 연속적인 숫자 카운트
-        
+
         for (int i = 0; i < 5; i++) {
             if (i >= 1 && numList[i] == numList[i - 1] + 1) {
                 continuedNumCount++;
             }
         }
-        
+
         // 같은 숫자 계산 코드
         int fourSameNum = 0;
         int threeSameNum = 0;
@@ -55,11 +55,6 @@ public class Ex2621 {
                 break; // 같은 숫자가 4개면 반복 더 안 해도 됨
             } else if (numCount[i] == 3) {
                 threeSameNum = i;
-                if (twoSameNum == 0) {
-                    twoSameNum = i;
-                } else {
-                    twoOtherSameNum = i;
-                }
             } else if (numCount[i] == 2) {
                 if (twoSameNum == 0) {
                     twoSameNum = i;
@@ -77,13 +72,8 @@ public class Ex2621 {
             score = max + 900;
         } else if (fourSameNum > 0) { // 2번 규칙
             score = fourSameNum + 800;
-        } else if (threeSameNum > 0 && twoOtherSameNum > 0) { // 3번 규칙
-            score = threeSameNum * 10;
-            if (threeSameNum == twoSameNum) {
-                score += twoOtherSameNum + 700;
-            } else {
-                score += twoSameNum + 700;
-            }
+        } else if (threeSameNum > 0 && twoSameNum > 0) { // 3번 규칙
+            score = threeSameNum * 10 + twoSameNum + 700;
         } else if (colorCount == 5) { // 4번 규칙
             score = max + 600;
         } else if (continuedNumCount == 5) { // 5번 규칙
