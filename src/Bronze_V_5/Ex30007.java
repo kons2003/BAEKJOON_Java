@@ -9,19 +9,19 @@ import java.util.StringTokenizer;
 public class Ex30007 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in) );
-        StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int w = 0;
-        int[] arr = new int[4];
-        int n = Integer.parseInt(st.nextToken());
+        int n = Integer.parseInt(br.readLine());
 
-        for (int i=0; i<n; i++) {
-            st = new StringTokenizer(br.readLine());
-            for (int j = 0; j < 4; j++) // Ai, Bi, Xi
-                arr[j] = Integer.parseInt(st.nextToken());
-            w = arr[0] * (arr[2] - 1) + arr[1];
+        for (int i = 0; i < n; i++) {
+            StringTokenizer st = new StringTokenizer(br.readLine());
+
+            int a = Integer.parseInt(st.nextToken());
+            int b = Integer.parseInt(st.nextToken());
+            int x = Integer.parseInt(st.nextToken());
+
+            int w = a * (x - 1) + b;
+
             System.out.println(w);
         }
-
     }
 }
