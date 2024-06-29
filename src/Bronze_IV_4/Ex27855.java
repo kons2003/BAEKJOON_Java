@@ -16,7 +16,7 @@ public class Ex27855 {
 
         st = new StringTokenizer(br.readLine());
         int h2 = Integer.parseInt(st.nextToken());
-        int bw = Integer.parseInt(st.nextToken());
+        int b2 = Integer.parseInt(st.nextToken());
 
         int p1Score = 3 * h1 + b1;
         int p2Score = 3 * h2 + b2;
