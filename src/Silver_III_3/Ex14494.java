@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Ex14494 {
-    static long dp[][];
+    static long[][] dp;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
